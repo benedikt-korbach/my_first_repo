@@ -1,3 +1,5 @@
+library(ggplot2)
+
 # Set-up your script ------------------------------------------------------
 
 install.packages(c("tidyverse", "gapminder", "pacman"))
@@ -13,3 +15,14 @@ head(gapminder)
 gapminder_clean <- gapminder %>% 
   rename(life_exp = lifeExp, gdp_per_cap = gdpPercap) %>% 
   mutate(gdp = pop * gdp_per_cap)
+
+
+# Section  ----------------------------------------------------------------
+
+
+# new branch --------------------------------------------------------------
+
+#This is part of my new branch idea
+ggplot(gapminder_clean, aes(x = gdp_per_cap, y = life_exp)) +
+  geom_point(mapping = aes(color = continent))
+
